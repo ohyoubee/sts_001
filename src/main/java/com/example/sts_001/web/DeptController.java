@@ -15,10 +15,11 @@ public class DeptController {
 
     @GetMapping("ex2")
     public String deptList(@RequestParam(name = "deptno", defaultValue = "1") Long deptno, Model model) {
-        Long preWorkCount = deptService.countPreWorkByDeptNo(deptno);
-        Long workCount = deptService.countWorkByDeptNo(deptno);
-        Long leaveCount = deptService.countLeaveByDeptNo(deptno);
-        String deptname = deptService.getDeptnameByDeptno(deptno);
+        Long preWorkCount = deptService.countPreWorkByDeptNo(deptno);  //카운트
+        Long workCount = deptService.countWorkByDeptNo(deptno); //카운트
+        Long leaveCount = deptService.countLeaveByDeptNo(deptno); //카운트
+
+        String deptname = deptService.getDeptnameByDeptno(deptno); //이름가져오기
 
         model.addAttribute("preWorkCount", preWorkCount);
         model.addAttribute("workCount", workCount);
